@@ -3,7 +3,7 @@
 ## Assets License (All Rights Reserved)
 
 All Rights Reserved
-Copyright (c) The Simulated Team / The Creators of Aeronautics
+Copyright (c) SteelWorks Studios
 
 This license applies to any files under the following directories:
 - 
@@ -16,7 +16,7 @@ All other files are licensed under the MIT License:
 
 MIT License
 
-Copyright (c) The Simulated Team / The Creators of Aeronautics
+Copyright (c) SteelWorks Studios
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
