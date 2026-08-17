@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    " SI",
+    " S "
+  ],
+  "key": {
+    "I": { "item": "minecraft:diamond" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:diamond_scythe",
+    "count": 1
+  }
+}

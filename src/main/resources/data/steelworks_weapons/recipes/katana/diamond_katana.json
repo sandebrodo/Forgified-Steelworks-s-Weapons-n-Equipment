@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  I",
+    " I ",
+    "SI "
+  ],
+  "key": {
+    "I": { "item": "minecraft:diamond" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:diamond_katana",
+    "count": 1
+  }
+}

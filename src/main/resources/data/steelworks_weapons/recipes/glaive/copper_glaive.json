@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  A",
+    " SI",
+    "S  "
+  ],
+  "key": {
+    "A": { "item": "steelworks_weapons:copper_dagger"},
+    "I": { "item": "minecraft:copper_ingot" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:copper_glaive",
+    "count": 1
+  }
+}

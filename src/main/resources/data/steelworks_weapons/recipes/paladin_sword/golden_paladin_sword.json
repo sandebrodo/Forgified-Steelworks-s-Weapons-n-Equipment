@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  I",
+    " I ",
+    "S  "
+  ],
+  "key": {
+    "I": { "item": "minecraft:gold_block" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:golden_paladin_sword",
+    "count": 1
+  }
+}

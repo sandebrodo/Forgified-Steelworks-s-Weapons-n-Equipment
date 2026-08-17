@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  I",
+    " I ",
+    "S  "
+  ],
+  "key": {
+    "I": { "item": "minecraft:copper_ingot" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:copper_big_sword",
+    "count": 1
+  }
+}

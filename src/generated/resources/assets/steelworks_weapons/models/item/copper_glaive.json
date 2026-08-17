@@ -1,0 +1,100 @@
+{
+  "parent": "minecraft:item/handheld",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "display": {
+      "firstperson_lefthand": {
+        "rotation": [
+          0,
+          90,
+          -55
+        ],
+        "scale": [
+          1.5,
+          1.5,
+          1
+        ],
+        "translation": [
+          0,
+          4,
+          0.5
+        ]
+      },
+      "firstperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          55
+        ],
+        "scale": [
+          1.5,
+          1.5,
+          1
+        ],
+        "translation": [
+          0,
+          4,
+          0.5
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          0,
+          90,
+          -55
+        ],
+        "scale": [
+          2,
+          2,
+          1
+        ],
+        "translation": [
+          0,
+          4,
+          0.5
+        ]
+      },
+      "thirdperson_righthand": {
+        "rotation": [
+          0,
+          -90,
+          55
+        ],
+        "scale": [
+          2,
+          2,
+          1
+        ],
+        "translation": [
+          0,
+          4,
+          0.5
+        ]
+      }
+    },
+    "textures": {
+      "layer0": "steelworks_weapons:item/32x/copper_glaive"
+    }
+  },
+  "loader": "forge:separate_transforms",
+  "perspectives": {
+    "fixed": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "steelworks_weapons:item/16x/copper_glaive"
+      }
+    },
+    "ground": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "steelworks_weapons:item/16x/copper_glaive"
+      }
+    },
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "steelworks_weapons:item/16x/copper_glaive"
+      }
+    }
+  }
+}

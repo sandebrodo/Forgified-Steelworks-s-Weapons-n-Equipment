@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "ISI",
+    " S "
+  ],
+  "key": {
+    "I": { "item": "steelworks_weapons:forgotten_ingot" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:forgotten_hammer",
+    "count": 1
+  }
+}

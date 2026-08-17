@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  A",
+    " SI",
+    "S  "
+  ],
+  "key": {
+    "A": { "item": "steelworks_weapons:forgotten_dagger"},
+    "I": { "item": "steelworks_weapons:forgotten_ingot" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:forgotten_glaive",
+    "count": 1
+  }
+}

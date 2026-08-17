@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "steelworks_weapons:item/16x/forgotten_dagger"
+  }
+}

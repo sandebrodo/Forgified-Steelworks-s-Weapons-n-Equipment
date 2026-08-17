@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  I",
+    " S ",
+    "S  "
+  ],
+  "key": {
+    "I": { "item": "minecraft:diamond_block" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "steelworks_weapons:diamond_club",
+    "count": 1
+  }
+}
