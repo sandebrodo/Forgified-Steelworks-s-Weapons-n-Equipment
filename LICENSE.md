@@ -6,7 +6,7 @@ All Rights Reserved
 Copyright (c) SteelWorks Studios
 
 This license applies to any files under the following directories:
-- 
+- ./src/main/resources/assets/
 
 ---
 
