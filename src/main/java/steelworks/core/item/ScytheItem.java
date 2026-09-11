@@ -20,12 +20,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 
+@SuppressWarnings("deprecation")
 public class ScytheItem extends TieredItem implements Vanishable {
 
     private float attackDamage;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-    public ScytheItem(Tier tier, int attackDamage, float attackSpeed ,Properties properties) {
+    public ScytheItem(Tier tier, int attackDamage, float attackSpeed, Properties properties) {
         super(tier, properties);
         this.attackDamage = (float) attackDamage + tier.getAttackDamageBonus();
 

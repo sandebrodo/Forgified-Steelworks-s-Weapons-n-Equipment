@@ -1,17 +1,19 @@
 package steelworks.core.registry;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
 import steelworks.SteelworksWeapons;
 import steelworks.core.datagen.ModItemModelProvider;
-import steelworks.core.item.HammerItem;
-import steelworks.core.item.ModTiers;
-import steelworks.core.item.ScytheItem;
-import steelworks.core.item.TieredTridentItem;
+import steelworks.core.item.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModItems {
@@ -19,6 +21,8 @@ public class ModItems {
     //TODO: Add retrieval of forgotten items
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SteelworksWeapons.MODID);
+
+    public static List<RegistryObject<? extends Item>> bows = new ArrayList<>();
 
     private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> supplier) {
         RegistryObject<T> item = ITEMS.register(name, supplier);
@@ -29,17 +33,12 @@ public class ModItems {
 
     private static <T extends Item> RegistryObject<T> registerWeapon(String name, WeaponModelType weaponModelType, Supplier<T> supplier) {
         RegistryObject<T> item = ITEMS.register(name, supplier);
-        if (weaponModelType == WeaponModelType.SCALED_WEAPON_32) {
-            ModItemModelProvider.scaled_weapons_32.put(item, new float[]{0f, 4f, 0.5f});
-        }
-        if (weaponModelType == WeaponModelType.SCALED_WEAPON_16) {
-            ModItemModelProvider.scaled_weapons_16.add(item);
-        }
-        if (weaponModelType == WeaponModelType.BASIC_WEAPON) {
-            ModItemModelProvider.basic_weapons.add(item);
-        }
-        if (weaponModelType == WeaponModelType.CUSTOM) {
-            ModItemModelProvider.custom_parent_model_weapons.add(item);
+        switch (weaponModelType) {
+            case BASIC_WEAPON -> ModItemModelProvider.basic_weapons.add(item);
+            case SCALED_WEAPON_32 -> ModItemModelProvider.scaled_weapons_32.put(item, new float[]{0f, 4f, 0.5f});
+            case SCALED_WEAPON_16 -> ModItemModelProvider.scaled_weapons_16.add(item);
+            case CUSTOM -> ModItemModelProvider.custom_parent_model_weapons.add(item);
+            case BOW -> bows.add(item);
         }
         ModCreativeModeTabs.weapons.add(item);
         return item;
@@ -53,10 +52,26 @@ public class ModItems {
         return item;
     }
 
+    private static <T extends Item> RegistryObject<T> registerWeapon(String name, WeaponModelType weaponModelType, boolean addToCreative, Supplier<T> supplier) {
+        RegistryObject<T> item = ITEMS.register(name, supplier);
+        switch (weaponModelType) {
+            case BASIC_WEAPON -> ModItemModelProvider.basic_weapons.add(item);
+            case SCALED_WEAPON_32 -> ModItemModelProvider.scaled_weapons_32.put(item, new float[]{0f, 4f, 0.5f});
+            case SCALED_WEAPON_16 -> ModItemModelProvider.scaled_weapons_16.add(item);
+            case CUSTOM -> ModItemModelProvider.custom_parent_model_weapons.add(item);
+            case BOW -> bows.add(item);
+        }
+
+        if (addToCreative) ModCreativeModeTabs.weapons.add(item);
+
+        return item;
+    }
+
     private enum WeaponModelType {
         BASIC_WEAPON,
         SCALED_WEAPON_32,
         SCALED_WEAPON_16,
+        BOW,
         CUSTOM;
     }
 
@@ -64,7 +79,15 @@ public class ModItems {
     public static final RegistryObject<Item> FORGOTTEN_SCRAP = registerItem("forgotten_scrap", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FORGOTTEN_NUGGET = registerItem("forgotten_nugget", () -> new Item(new Item.Properties()));
 
+    //Unique ability items
+    public static final RegistryObject<Item> BLOOD_ENVELOPE = registerItem("blood_envelope",  () -> new Item(new Item.Properties()) {
+        @Override
+        public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+            tooltip.add(Component.translatable("tooltip.steelworks_weapons.blood_envelope"));
+        }
+    });
 
+    //Melee Weapons
     private static final float DEFAULT_SCYTHE_ATTACK_SPEED = -2.9F;
     private static final float DEFAULT_HAMMER_ATTACK_SPEED = -3.1F;
     private static final float DEFAULT_TRIDENT_ATTACK_SPEED = -2.9F;
@@ -154,6 +177,28 @@ public class ModItems {
     public static final RegistryObject<Item> DIAMOND_KATANA = registerWeapon("diamond_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.DIAMOND, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
     public static final RegistryObject<Item> NETHERITE_KATANA = registerWeapon("netherite_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.NETHERITE, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
     public static final RegistryObject<Item> FORGOTTEN_KATANA = registerWeapon("forgotten_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.FORGOTTEN, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
+
+
+    //Ranged Weapons
+    public static final RegistryObject<Item> COPPER_BOW = registerWeapon("copper_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(3, ModTiers.COPPER, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_BOW = registerWeapon("iron_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(4, Tiers.IRON, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_BOW = registerWeapon("golden_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(3, Tiers.GOLD, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_BOW = registerWeapon("diamond_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(4.5, Tiers.DIAMOND, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_BOW = registerWeapon("netherite_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(5, Tiers.NETHERITE, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_BOW = registerWeapon("forgotten_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(5.5, ModTiers.FORGOTTEN, new Item.Properties()));
+
+
+    //Unique Weapons
+    public static final RegistryObject<Item> BLOOD_CULT_DAGGER = registerWeapon("blood_cult_dagger", WeaponModelType.BASIC_WEAPON, false,
+            () -> new BloodCultDaggerItem(ModTiers.BLOOD_CULT, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+                    tooltip.add(Component.translatable("tooltip.steelworks_weapons.blood_cult_dagger"));
+                }
+            });
+
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

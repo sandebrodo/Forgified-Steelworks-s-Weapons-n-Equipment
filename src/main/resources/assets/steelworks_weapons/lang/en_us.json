@@ -68,8 +68,20 @@
   "item.steelworks_weapons.diamond_katana": "Diamond Katana",
   "item.steelworks_weapons.netherite_katana": "Netherite Katana",
   "item.steelworks_weapons.forgotten_katana": "Forgotten Katana",
+  "item.steelworks_weapons.blood_envelope": "Blood Envelope",
+  "item.steelworks_weapons.blood_cult_dagger": "Blood Cult Dagger",
+
+  "item.steelworks_weapons.copper_bow": "Copper Bow",
+  "item.steelworks_weapons.iron_bow": "Iron Bow",
+  "item.steelworks_weapons.golden_bow": "Golden Bow",
+  "item.steelworks_weapons.diamond_bow": "Diamond Bow",
+  "item.steelworks_weapons.netherite_bow": "Netherite Bow",
+  "item.steelworks_weapons.forgotten_bow": "Forgotten Bow",
+
   "tooltip.steelworks_weapons.hammer_item": "§8Hold [§7Shift§8] to see more info",
   "tooltip.steelworks_weapons.hammer_item_shift_down": "§8Hold [§7Shift§8] to see more info\n\n§dHammers§5 can mine\nblocks in a §d3×3 area!\n\n§7While holding Shift\n§5 Mines §done§5 block, like a §dpickaxe.",
   "creative_tab.steelworks_weapons.weapons_tab": "SteelWorks Weapons n' Equipment",
-  "block.steelworks_weapons.forgotten_block": "Forgotten Block"
+  "block.steelworks_weapons.forgotten_block": "Forgotten Block",
+  "tooltip.steelworks_weapons.blood_cult_dagger": ".",
+  "tooltip.steelworks_weapons.blood_envelope": "."
 }

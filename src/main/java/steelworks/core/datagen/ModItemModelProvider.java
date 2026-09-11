@@ -12,6 +12,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import steelworks.SteelworksWeapons;
+import steelworks.core.registry.ModItems;
 
 import java.util.*;
 
@@ -27,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     public static List<RegistryObject<? extends Item>> scaled_weapons_16 = new ArrayList<>();
     public static List<RegistryObject<? extends Item>> items = new ArrayList<>();
     public static List<RegistryObject<? extends Item>> custom_parent_model_weapons = new ArrayList<>();
+    public static List<RegistryObject<? extends Item>> bows = new ArrayList<>();
 
     @Override
     protected void registerModels() {
@@ -42,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         scaled_weapons_16.forEach(item -> scaledHandheldItem16(item.get()));
         items.forEach(item -> basicItem(item.get()));
         custom_parent_model_weapons.forEach(item -> customParentModelItem(item.get()));
+        ModItems.bows.forEach(item -> bowItem(item.get()));
     }
 
 
@@ -167,5 +170,66 @@ public class ModItemModelProvider extends ItemModelProvider {
         return getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation(item.getNamespace(), "item/16x/" + item.getPath()));
+    }
+
+    public void bowItem(Item item) {
+        bowItem(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)));
+    }
+
+    public ItemModelBuilder bowItem(ResourceLocation item) {
+        String name = item.getPath();
+
+        ItemModelBuilder pull0 = bowPulling(0, item);
+        ItemModelBuilder pull1 = bowPulling(1, item);
+        ItemModelBuilder pull2 = bowPulling(2, item);
+
+        return getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation(modid, "item/16x/" + name))
+                .transforms()
+                .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)
+                .rotation(-80f, 260f, -40f)
+                .translation(-1f, -2f, 2.5f)
+                .scale(0.9f, 0.9f, 0.9f)
+                .end()
+                .transform(ItemDisplayContext.THIRD_PERSON_LEFT_HAND)
+                .rotation(-80f, -280f, 40f)
+                .translation(-1f, -2f, 2.5f)
+                .scale(0.9f, 0.9f, 0.9f)
+                .end()
+                .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND)
+                .rotation(0f, -90f, 25f)
+                .translation(1.13f, 3.2f, 1.13f)
+                .scale(0.68f, 0.68f, 0.68f)
+                .end()
+                .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND)
+                .rotation(0f, 90f, -25f)
+                .translation(1.13f, 3.2f, 1.13f)
+                .scale(0.68f, 0.68f, 0.68f)
+                .end()
+                .end()
+                .override()
+                .predicate(new ResourceLocation("pulling"), 1.0f)
+                .model(pull0)
+                .end()
+                .override()
+                .predicate(new ResourceLocation("pulling"), 1.0f)
+                .predicate(new ResourceLocation("pull"), 0.65f)
+                .model(pull1)
+                .end()
+                .override()
+                .predicate(new ResourceLocation("pulling"), 1.0f)
+                .predicate(new ResourceLocation("pull"), 0.9f)
+                .model(pull2)
+                .end();
+    }
+
+    public ItemModelBuilder bowPulling(int number, ResourceLocation item) {
+
+        String modelPath = item.getNamespace() + ":item/" + item.getPath() + "_pulling_" + number;
+
+        return getBuilder(modelPath)
+                .parent(new ModelFile.UncheckedModelFile("item/bow"))
+                .texture("layer0", new ResourceLocation(item.getNamespace(), "item/16x/" + item.getPath()) + "_pulling_" + number);
     }
 }

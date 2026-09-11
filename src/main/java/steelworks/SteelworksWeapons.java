@@ -7,13 +7,15 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import steelworks.core.registry.ModBlocks;
 import steelworks.core.registry.ModCreativeModeTabs;
+import steelworks.core.registry.ModEffects;
 import steelworks.core.registry.ModItems;
 
 @Mod(SteelworksWeapons.MODID)
+@SuppressWarnings("removal")
 public class SteelworksWeapons {
 
     public static final String MODID = "steelworks_weapons";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public SteelworksWeapons() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -21,6 +23,7 @@ public class SteelworksWeapons {
         ModItems.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEffects.register(modEventBus);
     }
 
 }

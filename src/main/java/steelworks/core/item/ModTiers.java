@@ -8,11 +8,12 @@ import steelworks.core.registry.ModItems;
 
 import java.util.function.Supplier;
 
+@SuppressWarnings("deprecation")
 public enum ModTiers implements Tier {
 
-
     COPPER(2, 190, 2f, 1.5f, 10, () -> {return Ingredient.of(Items.COPPER_INGOT);}),
-    FORGOTTEN(5, 2500, 10f, 5f, 25, () -> {return Ingredient.of(ModItems.FORGOTTEN_INGOT.get());});
+    FORGOTTEN(5, 2500, 10f, 5f, 25, () -> {return Ingredient.of(ModItems.FORGOTTEN_INGOT.get());}),
+    BLOOD_CULT(5, 2500, 10f, 5f, 25, Ingredient::of);
 
     //параметры идут по порядку
     private final int level; //уровень добычи

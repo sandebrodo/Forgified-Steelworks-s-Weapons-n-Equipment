@@ -68,8 +68,20 @@
   "item.steelworks_weapons.diamond_katana": "Алмазная катана",
   "item.steelworks_weapons.netherite_katana": "Незеритовая катана",
   "item.steelworks_weapons.forgotten_katana": "Забытая катана",
+  "item.steelworks_weapons.blood_envelope": "Кровавый конверт",
+  "item.steelworks_weapons.blood_cult_dagger": "Кинжал кровавого культа",
+
+  "item.steelworks_weapons.copper_bow": "Медный лук",
+  "item.steelworks_weapons.iron_bow": "Железный лук",
+  "item.steelworks_weapons.golden_bow": "Золотой лук",
+  "item.steelworks_weapons.diamond_bow": "Алмазный лук",
+  "item.steelworks_weapons.netherite_bow": "Незеритовый лук",
+  "item.steelworks_weapons.forgotten_bow": "Забытый лук",
+
   "tooltip.steelworks_weapons.hammer_item": "§8Удерживайте [§7Shift§8] для подробностей",
   "tooltip.steelworks_weapons.hammer_item_shift_down": "§8Удерживайте [§fShift§8] для подробностей\n\n§dМолоты§5 способны добывать\nблоки в §dобласти 3×3!\n\n§7При зажатом Shift\n§5 Добывает §dодин§5 блок, как §dкирка.",
   "creative_tab.steelworks_weapons.weapons_tab": "SteelWorks: Weapons n' Equipment",
-  "block.steelworks_weapons.forgotten_block": "Забытый блок"
+  "block.steelworks_weapons.forgotten_block": "Забытый блок",
+  "tooltip.steelworks_weapons.blood_cult_dagger": ".",
+  "tooltip.steelworks_weapons.blood_envelope": "."
 }
