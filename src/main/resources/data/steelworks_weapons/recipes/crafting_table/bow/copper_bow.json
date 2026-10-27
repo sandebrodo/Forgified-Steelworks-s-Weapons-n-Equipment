@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "forge:rods/wooden"
+    },
+    "X": {
+      "tag": "forge:string"
+    },
+    "I": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " #X",
+    "I X",
+    " #X"
+  ],
+  "result": {
+    "item": "steelworks_weapons:copper_bow"
+  }
+}

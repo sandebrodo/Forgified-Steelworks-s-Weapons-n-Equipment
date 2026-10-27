@@ -62,23 +62,14 @@ public class SteelworksServerEvents {
         ItemStack mainHandItemStack = serverPlayer.getMainHandItem();
         ItemStack offhandItemStack = serverPlayer.getOffhandItem();
         CompoundTag data = serverPlayer.getPersistentData();
-
-        if (mainHandItemStack.is(ModItems.BLOOD_ENVELOPE.get()) && offhandItemStack.isEmpty()) {
-
-            serverPlayer.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.BLOOD_CULT_DAGGER.get()));
-            serverPlayer.setItemSlot(EquipmentSlot.OFFHAND, new ItemStack(ModItems.BLOOD_CULT_DAGGER.get()));
-            data.putBoolean("hadDaggers", true);
-            return;
-        }
+        //SteelworksWeapons.LOGGER.debug("IS DAGGERS GIVEN: {}", data.getBoolean("isDaggersGiven"));
 
         boolean stillHasBothDaggers = mainHandItemStack.is(ModItems.BLOOD_CULT_DAGGER.get()) && offhandItemStack.is(ModItems.BLOOD_CULT_DAGGER.get());
 
-        if (!stillHasBothDaggers) {
+        if (!stillHasBothDaggers && data.getBoolean("isDaggersGiven")) {
+            data.putBoolean("isDaggersGiven", false);
             removeBloodCultDaggers(serverPlayer);
-            if (data.getBoolean("hadDaggers")) {
-                returnEnvelope(serverPlayer);
-                data.putBoolean("hadDaggers", false);
-            }
+            returnEnvelope(serverPlayer);
         }
     }
 

@@ -1,0 +1,19 @@
+{
+  "type": "steelworks_weapons:moon_altar",
+  "catalyst": {
+    "item": "minecraft:gold_ingot"
+  },
+  "ingredients": [
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "minecraft:lapis_lazuli" },
+    { "item": "minecraft:lapis_lazuli" },
+    { "item": "minecraft:lapis_lazuli" },
+    { "item": "minecraft:lapis_lazuli" }
+  ],
+  "result": {
+    "item": "steelworks_weapons:moon_gold_ingot"
+  }
+}

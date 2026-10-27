@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "forge:rods/wooden"
+    },
+    "X": {
+      "tag": "forge:string"
+    },
+    "I": {
+      "item": "steelworks_weapons:forgotten_ingot"
+    }
+  },
+  "pattern": [
+    " #X",
+    "I X",
+    " #X"
+  ],
+  "result": {
+    "item": "steelworks_weapons:forgotten_bow"
+  }
+}

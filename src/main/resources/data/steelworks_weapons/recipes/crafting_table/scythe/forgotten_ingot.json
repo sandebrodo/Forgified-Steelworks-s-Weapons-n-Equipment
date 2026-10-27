@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "steelworks_weapons:forgotten_scrap" },
+    { "item": "steelworks_weapons:forgotten_scrap" },
+    { "item": "steelworks_weapons:forgotten_scrap" },
+    { "item": "steelworks_weapons:forgotten_scrap" },
+    { "item": "minecraft:echo_shard" },
+    { "item": "minecraft:echo_shard" },
+    { "item": "minecraft:echo_shard" },
+    { "item": "minecraft:echo_shard" }
+  ],
+  "result": {
+    "item": "steelworks_weapons:forgotten_ingot",
+    "count": 1
+  }
+}

@@ -8,7 +8,7 @@ import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import steelworks.SteelworksWeapons;
-import steelworks.core.item.SteelworksBowItem;
+import steelworks.core.item.TieredBowItem;
 
 @Mod.EventBusSubscriber (modid = SteelworksWeapons.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class BowZoomModifier {
@@ -22,7 +22,7 @@ public class BowZoomModifier {
         if (!player.isUsingItem()) return;
 
         ItemStack useItem = player.getUseItem();
-        if (!(useItem.getItem() instanceof SteelworksBowItem)) return;
+        if (!(useItem.getItem() instanceof TieredBowItem)) return;
 
         float useDuration = useItem.getUseDuration();
         float zoomModifier = getZoomModifier(event, useDuration, player);
@@ -42,8 +42,6 @@ public class BowZoomModifier {
             pullProgress *= pullProgress;
         }
 
-        float zoomModifier = 1.0F - pullProgress * 0.1F;
-        return zoomModifier;
+        return 1.0F - pullProgress * 0.1F;
     }
-
 }

@@ -1,0 +1,19 @@
+{
+  "type": "steelworks_weapons:moon_altar",
+  "catalyst": {
+    "item": "minecraft:golden_helmet"
+  },
+  "ingredients": [
+    { "item": "minecraft:string" },
+    { "item": "minecraft:string" },
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "minecraft:glass_pane" },
+    { "item": "minecraft:glass_pane" }
+  ],
+  "result": {
+    "item": "steelworks_weapons:moon_oculars"
+  }
+}

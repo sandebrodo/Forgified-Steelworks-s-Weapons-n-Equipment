@@ -1,0 +1,19 @@
+{
+  "type": "steelworks_weapons:moon_altar",
+  "catalyst": {
+    "item": "steelworks_weapons:moon_pebble"
+  },
+  "ingredients": [
+    { "item": "minecraft:glowstone_dust" },
+    { "item": "minecraft:glowstone_dust" },
+    { "item": "minecraft:glowstone_dust" },
+    { "item": "minecraft:glowstone_dust" },
+    { "item": "minecraft:quartz" },
+    { "item": "minecraft:quartz" },
+    { "item": "minecraft:quartz" },
+    { "item": "minecraft:quartz" }
+  ],
+  "result": {
+    "item": "steelworks_weapons:moon_dust"
+  }
+}

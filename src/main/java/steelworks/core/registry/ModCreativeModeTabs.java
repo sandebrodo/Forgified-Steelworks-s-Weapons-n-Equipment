@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -18,6 +19,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SteelworksWeapons.MODID);
 
     public static List<RegistryObject<? extends Item>> items = new ArrayList<>();
+    public static List<RegistryObject<? extends Block>> blocks = new ArrayList<>();
     public static List<RegistryObject<? extends Item>> weapons = new ArrayList<>();
 
 
@@ -26,9 +28,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creative_tab.steelworks_weapons.weapons_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         items.forEach(item -> output.accept(item.get()));
+                        blocks.forEach(block -> output.accept(block.get()));
                         weapons.forEach(weapon -> output.accept(weapon.get()));
-
-                        output.accept(ModBlocks.FORGOTTEN_BLOCK.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

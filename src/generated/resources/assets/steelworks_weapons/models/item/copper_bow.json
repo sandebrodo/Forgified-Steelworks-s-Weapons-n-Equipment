@@ -80,15 +80,15 @@
     {
       "model": "steelworks_weapons:item/copper_bow_pulling_1",
       "predicate": {
-        "minecraft:pulling": 1.0,
-        "minecraft:pull": 0.65
+        "minecraft:pull": 0.65,
+        "minecraft:pulling": 1.0
       }
     },
     {
       "model": "steelworks_weapons:item/copper_bow_pulling_2",
       "predicate": {
-        "minecraft:pulling": 1.0,
-        "minecraft:pull": 0.9
+        "minecraft:pull": 0.9,
+        "minecraft:pulling": 1.0
       }
     }
   ],

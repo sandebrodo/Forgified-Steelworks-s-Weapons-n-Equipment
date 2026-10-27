@@ -1,0 +1,19 @@
+{
+  "type": "steelworks_weapons:moon_altar",
+  "catalyst": {
+    "item": "steelworks_weapons:moonstone"
+  },
+  "ingredients": [
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "steelworks_weapons:moon_dust" },
+    { "item": "steelworks_weapons:moon_pebble" },
+    { "item": "steelworks_weapons:moon_pebble" }
+  ],
+  "result": {
+    "item": "steelworks_weapons:white_moon_amulet"
+  }
+}

@@ -15,6 +15,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.Nullable;
 import steelworks.core.registry.ModTags;
+import steelworks.core.util.TooltipUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,10 +75,10 @@ public class HammerItem extends DiggerItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        if (!Screen.hasShiftDown()) {
+        TooltipUtil.addHoldShiftTooltip(tooltipComponents);
+        if (Screen.hasShiftDown()) {
+            TooltipUtil.addIndentations(tooltipComponents, 1);
             tooltipComponents.add(Component.translatable("tooltip.steelworks_weapons.hammer_item"));
-        } else {
-            tooltipComponents.add(Component.translatable("tooltip.steelworks_weapons.hammer_item_shift_down"));
         }
     }
 }

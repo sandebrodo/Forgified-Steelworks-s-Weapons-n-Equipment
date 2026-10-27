@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": { "item": "steelworks_weapons:moon_pebble" }
+  },
+  "result": {
+    "item": "steelworks_weapons:moonstone",
+    "count": 1
+  }
+}

@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TridentItem;
 
+@Deprecated(forRemoval = true)
 public class TieredTridentItem extends TridentItem {
 
     private final Tier tier;

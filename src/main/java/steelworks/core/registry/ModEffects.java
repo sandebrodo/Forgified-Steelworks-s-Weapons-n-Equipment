@@ -9,7 +9,7 @@ import steelworks.SteelworksWeapons;
 import steelworks.core.effects.BleedingEffect;
 
 public class ModEffects {
-
+    //W.I.P. Plans for ver. 1.3
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, SteelworksWeapons.MODID);
 
     public static final RegistryObject<MobEffect> BLEEDING = MOB_EFFECTS.register("bleeding", BleedingEffect::new);

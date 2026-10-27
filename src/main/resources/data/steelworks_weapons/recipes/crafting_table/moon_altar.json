@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EDE",
+    "P#P",
+    "EDE"
+  ],
+  "key": {
+    "P": { "item": "steelworks_weapons:moon_pebble" },
+    "#": { "item": "steelworks_weapons:moon_pedestal" },
+    "E": { "item": "minecraft:ender_pearl" },
+    "D": { "item": "minecraft:diamond" }
+  },
+  "result": {
+    "item": "steelworks_weapons:moon_altar",
+    "count": 1
+  }
+}

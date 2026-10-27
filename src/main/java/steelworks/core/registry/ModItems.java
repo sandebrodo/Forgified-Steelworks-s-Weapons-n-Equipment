@@ -1,5 +1,6 @@
 package steelworks.core.registry;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -11,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import steelworks.SteelworksWeapons;
 import steelworks.core.datagen.ModItemModelProvider;
 import steelworks.core.item.*;
+import steelworks.core.util.TooltipUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,12 +77,20 @@ public class ModItems {
         CUSTOM;
     }
 
-    public static final RegistryObject<Item> FORGOTTEN_INGOT = registerItem("forgotten_ingot", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_SCRAP = registerItem("forgotten_scrap", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_NUGGET = registerItem("forgotten_nugget", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOON_DUST = registerItem("moon_dust", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOON_GOLD_INGOT = registerItem("moon_gold_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MOON_PEBBLE = registerItem("moon_pebble", () -> new Item(new Item.Properties()) {
+        @Override
+        public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+            TooltipUtil.addHoldShiftTooltip(tooltipComponents);
+            if (Screen.hasShiftDown()) {
+                tooltipComponents.add(Component.translatable("tooltip.steelworks_weapons.moon_pebble"));
+            }
+        }
+    });
 
     //Unique ability items
-    public static final RegistryObject<Item> BLOOD_ENVELOPE = registerItem("blood_envelope",  () -> new Item(new Item.Properties()) {
+    public static final RegistryObject<Item> BLOOD_ENVELOPE = registerItem("blood_envelope", () -> new BloodEnvelopeItem(new Item.Properties().stacksTo(1)) {
         @Override
         public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
             tooltip.add(Component.translatable("tooltip.steelworks_weapons.blood_envelope"));
@@ -113,7 +123,8 @@ public class ModItems {
     public static final RegistryObject<Item> DIAMOND_HAMMER = registerWeapon("diamond_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.DIAMOND, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
     public static final RegistryObject<Item> NETHERITE_HAMMER = registerWeapon("netherite_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.NETHERITE, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
     public static final RegistryObject<Item> FORGOTTEN_HAMMER = registerWeapon("forgotten_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(ModTiers.FORGOTTEN, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
-//   TODO: Add thrown trident projectile models
+
+//   TODO: Add thrown trident projectile models (DEPRECATED, MARKED FOR REMOVE)
 //    public static final RegistryObject<Item> COPPER_TRIDENT = registerWeapon("copper_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(ModTiers.COPPER, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
 //    public static final RegistryObject<Item> IRON_TRIDENT = registerWeapon("iron_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(Tiers.IRON, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
 //    public static final RegistryObject<Item> GOLDEN_TRIDENT = registerWeapon("golden_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(Tiers.GOLD, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
@@ -180,25 +191,42 @@ public class ModItems {
 
 
     //Ranged Weapons
-    public static final RegistryObject<Item> COPPER_BOW = registerWeapon("copper_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(3, ModTiers.COPPER, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_BOW = registerWeapon("iron_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(4, Tiers.IRON, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_BOW = registerWeapon("golden_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(3, Tiers.GOLD, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_BOW = registerWeapon("diamond_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(4.5, Tiers.DIAMOND, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_BOW = registerWeapon("netherite_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(5, Tiers.NETHERITE, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_BOW = registerWeapon("forgotten_bow", WeaponModelType.BOW, () -> new SteelworksBowItem(5.5, ModTiers.FORGOTTEN, new Item.Properties()));
-
+    public static final RegistryObject<Item> COPPER_BOW = registerWeapon("copper_bow", WeaponModelType.BOW, () -> new TieredBowItem(3, ModTiers.COPPER, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_BOW = registerWeapon("iron_bow", WeaponModelType.BOW, () -> new TieredBowItem(4, Tiers.IRON, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_BOW = registerWeapon("golden_bow", WeaponModelType.BOW, () -> new TieredBowItem(3, Tiers.GOLD, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_BOW = registerWeapon("diamond_bow", WeaponModelType.BOW, () -> new TieredBowItem(4.5, Tiers.DIAMOND, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_BOW = registerWeapon("netherite_bow", WeaponModelType.BOW, () -> new TieredBowItem(5, Tiers.NETHERITE, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_BOW = registerWeapon("forgotten_bow", WeaponModelType.BOW, () -> new TieredBowItem(5.5, ModTiers.FORGOTTEN, new Item.Properties()));
 
     //Unique Weapons
     public static final RegistryObject<Item> BLOOD_CULT_DAGGER = registerWeapon("blood_cult_dagger", WeaponModelType.BASIC_WEAPON, false,
-            () -> new BloodCultDaggerItem(ModTiers.BLOOD_CULT, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()) {
+            () -> new BloodCultDaggerItem(ModTiers.BLOOD_CULT, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties().durability(-1)) {
                 @Override
                 public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
                     tooltip.add(Component.translatable("tooltip.steelworks_weapons.blood_cult_dagger"));
                 }
             });
 
+    //Accessories
+    //public static final RegistryObject<Item> COPPER_RING = registerItem("copper_ring", () -> new CopperRingItem(new Item.Properties()));
+    public static final RegistryObject<Item> MOON_RING_WITH_DIAMOND = registerItem("moon_ring_with_diamond", () -> new MoonRingItem(new Item.Properties(), MoonRingItem.Type.WITH_DIAMOND));
+    public static final RegistryObject<Item> MOON_RING_WITH_EMERALD = registerItem("moon_ring_with_emerald", () -> new MoonRingItem(new Item.Properties(), MoonRingItem.Type.WITH_EMERALD));
+    public static final RegistryObject<Item> MOON_OCULARS = registerItem("moon_oculars", () -> new MoonOcularsItem(new Item.Properties()));
+    public static final RegistryObject<Item> LUNAR_MAGNET_AMULET = registerItem("lunar_magnet_amulet", () -> new LunarMagnetAmuletItem(new Item.Properties()));
+    public static final RegistryObject<Item> WHITE_MOON_AMULET = registerItem("white_moon_amulet", () -> new WhiteMoonAmuletItem(new Item.Properties()));
 
-
+    //Forgotten
+    public static final RegistryObject<Item> FORGOTTEN_INGOT = registerItem("forgotten_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_SCRAP = registerItem("forgotten_scrap", () -> new Item(new Item.Properties()) {
+        @Override
+        public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+            TooltipUtil.addHoldShiftTooltip(tooltipComponents);
+            if (Screen.hasShiftDown()) {
+                tooltipComponents.add(Component.translatable("tooltip.steelworks_weapons.forgotten_scrap"));
+            }
+        }
+    });
+    public static final RegistryObject<Item> FORGOTTEN_NUGGET = registerItem("forgotten_nugget", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
