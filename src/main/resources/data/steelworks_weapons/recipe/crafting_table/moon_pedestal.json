@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P P",
+    "PSP",
+    "PSP"
+  ],
+  "key": {
+    "P": {
+      "item": "steelworks_weapons:moon_pebble"
+    },
+    "S": {
+      "item": "steelworks_weapons:moonstone"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "steelworks_weapons:moon_pedestal"
+  }
+}

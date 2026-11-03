@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "steelworks_weapons:item/16x/iron_bow_pulling_0"
+  }
+}

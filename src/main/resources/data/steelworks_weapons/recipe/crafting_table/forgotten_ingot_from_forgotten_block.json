@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "steelworks_weapons:forgotten_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "steelworks_weapons:forgotten_ingot"
+  }
+}

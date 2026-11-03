@@ -1,0 +1,10 @@
+{
+  "type": "steelworks_weapons:moon_altar",
+  "catalyst": {
+    "item": "minecraft:clay_ball"
+  },
+  "result": {
+    "id": "steelworks_weapons:moon_pebble",
+    "count": 1
+  }
+}

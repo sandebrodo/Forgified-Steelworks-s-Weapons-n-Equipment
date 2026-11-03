@@ -1,0 +1,16 @@
+{
+  "type": "steelworks_weapons:moon_altar",
+  "catalyst": {
+    "item": "minecraft:emerald"
+  },
+  "ingredients": [
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_gold_ingot" },
+    { "item": "steelworks_weapons:moon_gold_ingot" }
+  ],
+  "result": {
+    "id": "steelworks_weapons:moon_ring_with_emerald",
+    "count": 1
+  }
+}

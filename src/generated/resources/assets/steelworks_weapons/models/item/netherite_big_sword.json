@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "display": {
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -55
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1
+      ],
+      "translation": [
+        0,
+        5,
+        0.5
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        -90,
+        55
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1
+      ],
+      "translation": [
+        0,
+        5,
+        0.5
+      ]
+    }
+  },
+  "textures": {
+    "layer0": "steelworks_weapons:item/16x/netherite_big_sword"
+  }
+}
