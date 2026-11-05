@@ -58,24 +58,24 @@ public class SteelworksServerEvents {
         var player = event.getEntity();
         if (!(player instanceof ServerPlayer serverPlayer)) return;
 
-        ItemStack mainHandItemStack = serverPlayer.getMainHandItem();
-        ItemStack offhandItemStack = serverPlayer.getOffhandItem();
         CompoundTag data = serverPlayer.getPersistentData();
 
-        boolean stillHasBothDaggers = mainHandItemStack.is(ModItems.BLOOD_CULT_DAGGER.get()) && offhandItemStack.is(ModItems.BLOOD_CULT_DAGGER.get());
-
-
-        //Fixed dupe bug
-        if (!stillHasBothDaggers && data.getBoolean("isDaggersGiven")) {
-            data.putBoolean("isDaggersGiven", false);
-            removeBloodCultDaggers(serverPlayer);
-            returnEnvelope(serverPlayer);
-            return;
-        }
         removeBloodCultDaggers(serverPlayer);
+        if (!stillHasBothDaggers(serverPlayer) && data.getBoolean("isDaggersGiven")) {
+            data.putBoolean("isDaggersGiven", false);
+            returnEnvelope(serverPlayer);
+        }
+    }
+
+    static boolean stillHasBothDaggers(ServerPlayer serverPlayer) {
+        ItemStack mainHandItemStack = serverPlayer.getMainHandItem();
+        ItemStack offhandItemStack = serverPlayer.getOffhandItem();
+        return mainHandItemStack.is(ModItems.BLOOD_CULT_DAGGER.get()) && offhandItemStack.is(ModItems.BLOOD_CULT_DAGGER.get());
     }
 
     static void removeBloodCultDaggers(ServerPlayer player) {
+
+        if (stillHasBothDaggers(player)) return;
 
         player.getInventory().clearOrCountMatchingItems(
                 stack -> stack.is(ModItems.BLOOD_CULT_DAGGER.get()),
