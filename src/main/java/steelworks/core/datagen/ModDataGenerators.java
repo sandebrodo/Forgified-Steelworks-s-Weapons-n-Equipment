@@ -3,6 +3,9 @@ package steelworks.core.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -28,6 +31,7 @@ public class ModDataGenerators {
         generator.addProvider(server, new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(server, ModLootTableProvider.createBlockLootTables(packOutput, lookupProvider));
         generator.addProvider(server, new ModWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(server, new ModItemTagsProvider(packOutput, lookupProvider, CompletableFuture.completedFuture(null), existingFileHelper));
     }
 
 }

@@ -60,15 +60,6 @@
             Optional<RecipeHolder<MoonAltarRecipe>> recipeHolder = level.getRecipeManager()
                     .getRecipeFor(ModRecipes.MOON_ALTAR_RECIPE_TYPE.get(), input, level);
 
-            if (level.getGameTime() % 40 == 0) {
-                var all = level.getRecipeManager().getAllRecipesFor(ModRecipes.MOON_ALTAR_RECIPE_TYPE.get());
-                System.out.println("loaded=" + all.size() + " items=" + items.size()
-                        + " catalyst=" + input.catalyst() + " empty=" + input.isEmpty());
-                for (var h : all) {
-                    System.out.println("  " + h.id() + " matches=" + h.value().matches(input, level));
-                }
-            }
-
 
 
             Vec3 altarCenter = Vec3.atCenterOf(this.worldPosition).add(0, 0.5, 0);

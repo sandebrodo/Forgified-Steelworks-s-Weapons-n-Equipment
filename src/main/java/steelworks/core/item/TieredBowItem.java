@@ -9,10 +9,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class TieredBowItem extends BowItem {
     private final double arrowBaseDamage;
+    private final Tier tier;
 
     public TieredBowItem(double arrowBaseDamage, Tier tier, Properties properties) {
         super(properties.durability(tier.getUses()));
         this.arrowBaseDamage = arrowBaseDamage;
+        this.tier = tier;
     }
 
     @Override
@@ -24,5 +26,10 @@ public class TieredBowItem extends BowItem {
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
         return UseAnim.BOW;
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return tier.getEnchantmentValue();
     }
 }
