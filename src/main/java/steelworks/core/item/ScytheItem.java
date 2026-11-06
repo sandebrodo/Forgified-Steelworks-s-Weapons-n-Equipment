@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
 
-@SuppressWarnings("deprecation")
+@Deprecated(forRemoval = true)
 public class ScytheItem extends TieredItem implements Vanishable {
 
     private float attackDamage;

@@ -98,6 +98,7 @@ public class ModItems {
     });
 
     //Melee Weapons
+    //Default attack speed
     private static final float DEFAULT_SCYTHE_ATTACK_SPEED = -2.9F;
     private static final float DEFAULT_HAMMER_ATTACK_SPEED = -3.1F;
     private static final float DEFAULT_TRIDENT_ATTACK_SPEED = -2.9F;
@@ -110,93 +111,98 @@ public class ModItems {
     private static final float DEFAULT_CLAYMORE_ATTACK_SPEED = -2.8F;
     private static final float DEFAULT_KATANA_ATTACK_SPEED = -2.3F;
 
-    public static final RegistryObject<Item> COPPER_SCYTHE = registerWeapon("copper_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new ScytheItem(ModTiers.COPPER, 4, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_SCYTHE = registerWeapon("iron_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new ScytheItem(Tiers.IRON, 4, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_SCYTHE = registerWeapon("golden_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new ScytheItem(Tiers.GOLD, 4, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_SCYTHE = registerWeapon("diamond_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new ScytheItem(Tiers.DIAMOND, 4, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_SCYTHE = registerWeapon("netherite_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new ScytheItem(Tiers.NETHERITE, 4, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_SCYTHE = registerWeapon("forgotten_scythe", WeaponModelType.SCALED_WEAPON_32,() -> new ScytheItem(ModTiers.FORGOTTEN, 4, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
+    //Base attack damage
+    private static final int SCYTHE_BASE_ATTACK_DAMAGE = 4;
+    private static final int HAMMER_BASE_ATTACK_DAMAGE = 3;
+    private static final int BIG_SWORD_BASE_ATTACK_DAMAGE = 6;
+    private static final int BATTLE_AXE_BASE_ATTACK_DAMAGE = 5;
+    private static final int PALADIN_SWORD_BASE_ATTACK_DAMAGE = 8;
+    private static final int DAGGER_BASE_ATTACK_DAMAGE = 2;
+    private static final int GLAIVE_BASE_ATTACK_DAMAGE = 4;
+    private static final int CLUB_BASE_ATTACK_DAMAGE = 6;
+    private static final int CLAYMORE_BASE_ATTACK_DAMAGE = 5;
+    private static final int KATANA_BASE_ATTACK_DAMAGE = 3;
 
-    public static final RegistryObject<Item> COPPER_HAMMER = registerWeapon("copper_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(ModTiers.COPPER, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_HAMMER = registerWeapon("iron_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.IRON, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_HAMMER = registerWeapon("golden_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.GOLD, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_HAMMER = registerWeapon("diamond_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.DIAMOND, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_HAMMER = registerWeapon("netherite_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.NETHERITE, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_HAMMER = registerWeapon("forgotten_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(ModTiers.FORGOTTEN, 3, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_SCYTHE = registerWeapon("copper_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.COPPER, SCYTHE_BASE_ATTACK_DAMAGE, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_SCYTHE = registerWeapon("iron_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.IRON, SCYTHE_BASE_ATTACK_DAMAGE, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_SCYTHE = registerWeapon("golden_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.GOLD, SCYTHE_BASE_ATTACK_DAMAGE, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_SCYTHE = registerWeapon("diamond_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.DIAMOND, SCYTHE_BASE_ATTACK_DAMAGE, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_SCYTHE = registerWeapon("netherite_scythe", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.NETHERITE, SCYTHE_BASE_ATTACK_DAMAGE, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_SCYTHE = registerWeapon("forgotten_scythe", WeaponModelType.SCALED_WEAPON_32,() -> new SwordItem(ModTiers.FORGOTTEN, SCYTHE_BASE_ATTACK_DAMAGE, DEFAULT_SCYTHE_ATTACK_SPEED, new Item.Properties()));
 
-//   TODO: Add thrown trident projectile models (DEPRECATED, MARKED FOR REMOVE)
-//    public static final RegistryObject<Item> COPPER_TRIDENT = registerWeapon("copper_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(ModTiers.COPPER, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
-//    public static final RegistryObject<Item> IRON_TRIDENT = registerWeapon("iron_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(Tiers.IRON, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
-//    public static final RegistryObject<Item> GOLDEN_TRIDENT = registerWeapon("golden_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(Tiers.GOLD, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
-//    public static final RegistryObject<Item> DIAMOND_TRIDENT = registerWeapon("diamond_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(Tiers.DIAMOND, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
-//    public static final RegistryObject<Item> NETHERITE_TRIDENT = registerWeapon("netherite_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(Tiers.NETHERITE, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
-//    public static final RegistryObject<Item> FORGOTTEN_TRIDENT = registerWeapon("forgotten_trident", WeaponModelType.CUSTOM, () -> new TieredTridentItem(ModTiers.FORGOTTEN, 3, DEFAULT_TRIDENT_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_HAMMER = registerWeapon("copper_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(ModTiers.COPPER, HAMMER_BASE_ATTACK_DAMAGE, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_HAMMER = registerWeapon("iron_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.IRON, HAMMER_BASE_ATTACK_DAMAGE, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_HAMMER = registerWeapon("golden_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.GOLD, HAMMER_BASE_ATTACK_DAMAGE, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_HAMMER = registerWeapon("diamond_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.DIAMOND, HAMMER_BASE_ATTACK_DAMAGE, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_HAMMER = registerWeapon("netherite_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(Tiers.NETHERITE, HAMMER_BASE_ATTACK_DAMAGE, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_HAMMER = registerWeapon("forgotten_hammer", WeaponModelType.BASIC_WEAPON, () -> new HammerItem(ModTiers.FORGOTTEN, HAMMER_BASE_ATTACK_DAMAGE, DEFAULT_HAMMER_ATTACK_SPEED, new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_BIG_SWORD = registerWeapon("copper_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.COPPER, 6, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_BIG_SWORD = registerWeapon("iron_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.IRON, 6, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_BIG_SWORD = registerWeapon("golden_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.GOLD, 6, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_BIG_SWORD = registerWeapon("diamond_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.DIAMOND, 6, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_BIG_SWORD = registerWeapon("netherite_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.NETHERITE, 6, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_BIG_SWORD = registerWeapon("forgotten_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.FORGOTTEN, 6, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_BIG_SWORD = registerWeapon("copper_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.COPPER, BIG_SWORD_BASE_ATTACK_DAMAGE, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_BIG_SWORD = registerWeapon("iron_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.IRON, BIG_SWORD_BASE_ATTACK_DAMAGE, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_BIG_SWORD = registerWeapon("golden_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.GOLD, BIG_SWORD_BASE_ATTACK_DAMAGE, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_BIG_SWORD = registerWeapon("diamond_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.DIAMOND, BIG_SWORD_BASE_ATTACK_DAMAGE, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_BIG_SWORD = registerWeapon("netherite_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.NETHERITE, BIG_SWORD_BASE_ATTACK_DAMAGE, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_BIG_SWORD = registerWeapon("forgotten_big_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.FORGOTTEN, BIG_SWORD_BASE_ATTACK_DAMAGE, DEFAULT_BIG_SWORD_ATTACK_SPEED, new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_BATTLE_AXE = registerWeapon("copper_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(ModTiers.COPPER, 4, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_BATTLE_AXE = registerWeapon("iron_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.IRON, 4, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_BATTLE_AXE = registerWeapon("golden_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.GOLD, 4, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_BATTLE_AXE = registerWeapon("diamond_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.DIAMOND, 4, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_BATTLE_AXE = registerWeapon("netherite_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.NETHERITE, 4, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_BATTLE_AXE = registerWeapon("forgotten_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(ModTiers.FORGOTTEN, 4, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_BATTLE_AXE = registerWeapon("copper_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(ModTiers.COPPER, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_BATTLE_AXE = registerWeapon("iron_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.IRON, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_BATTLE_AXE = registerWeapon("golden_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.GOLD, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_BATTLE_AXE = registerWeapon("diamond_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.DIAMOND, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_BATTLE_AXE = registerWeapon("netherite_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(Tiers.NETHERITE, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_BATTLE_AXE = registerWeapon("forgotten_battle_axe", WeaponModelType.SCALED_WEAPON_32, () -> new AxeItem(ModTiers.FORGOTTEN, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_BATTLE_AXE_ATTACK_SPEED, new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_PALADIN_SWORD = registerWeapon("copper_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.COPPER, 8, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_PALADIN_SWORD = registerWeapon("iron_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.IRON, 8, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_PALADIN_SWORD = registerWeapon("golden_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.GOLD, 8, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_PALADIN_SWORD = registerWeapon("diamond_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.DIAMOND, 8, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_PALADIN_SWORD = registerWeapon("netherite_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.NETHERITE, 8, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_PALADIN_SWORD = registerWeapon("forgotten_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.FORGOTTEN, 8, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_PALADIN_SWORD = registerWeapon("copper_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.COPPER, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_PALADIN_SWORD = registerWeapon("iron_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.IRON, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_PALADIN_SWORD = registerWeapon("golden_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.GOLD, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_PALADIN_SWORD = registerWeapon("diamond_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.DIAMOND, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_PALADIN_SWORD = registerWeapon("netherite_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(Tiers.NETHERITE, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_PALADIN_SWORD = registerWeapon("forgotten_paladin_sword", WeaponModelType.SCALED_WEAPON_16, () -> new SwordItem(ModTiers.FORGOTTEN, BATTLE_AXE_BASE_ATTACK_DAMAGE, DEFAULT_PALADIN_SWORD_ATTACK_SPEED, new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_DAGGER = registerWeapon("copper_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(ModTiers.COPPER, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_DAGGER = registerWeapon("iron_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.IRON, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_DAGGER = registerWeapon("golden_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.GOLD, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_DAGGER = registerWeapon("diamond_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.DIAMOND, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_DAGGER = registerWeapon("netherite_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.NETHERITE, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_DAGGER = registerWeapon("forgotten_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(ModTiers.FORGOTTEN, 2, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_DAGGER = registerWeapon("copper_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(ModTiers.COPPER, DAGGER_BASE_ATTACK_DAMAGE, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_DAGGER = registerWeapon("iron_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.IRON, DAGGER_BASE_ATTACK_DAMAGE, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_DAGGER = registerWeapon("golden_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.GOLD, DAGGER_BASE_ATTACK_DAMAGE, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_DAGGER = registerWeapon("diamond_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.DIAMOND, DAGGER_BASE_ATTACK_DAMAGE, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_DAGGER = registerWeapon("netherite_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(Tiers.NETHERITE, DAGGER_BASE_ATTACK_DAMAGE, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_DAGGER = registerWeapon("forgotten_dagger", WeaponModelType.BASIC_WEAPON, () -> new SwordItem(ModTiers.FORGOTTEN, DAGGER_BASE_ATTACK_DAMAGE, DEFAULT_DAGGER_ATTACK_SPEED, new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_GLAIVE = registerWeapon("copper_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.COPPER, 4, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_GLAIVE = registerWeapon("iron_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.IRON, 4, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_GLAIVE = registerWeapon("golden_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.GOLD, 4, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_GLAIVE = registerWeapon("diamond_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.DIAMOND, 4, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_GLAIVE = registerWeapon("netherite_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.NETHERITE, 4, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_GLAIVE = registerWeapon("forgotten_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.FORGOTTEN, 4, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_GLAIVE = registerWeapon("copper_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.COPPER, GLAIVE_BASE_ATTACK_DAMAGE, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_GLAIVE = registerWeapon("iron_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.IRON, GLAIVE_BASE_ATTACK_DAMAGE, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_GLAIVE = registerWeapon("golden_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.GOLD, GLAIVE_BASE_ATTACK_DAMAGE, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_GLAIVE = registerWeapon("diamond_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.DIAMOND, GLAIVE_BASE_ATTACK_DAMAGE, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_GLAIVE = registerWeapon("netherite_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.NETHERITE, GLAIVE_BASE_ATTACK_DAMAGE, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_GLAIVE = registerWeapon("forgotten_glaive", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.FORGOTTEN, GLAIVE_BASE_ATTACK_DAMAGE, DEFAULT_GLAIVE_ATTACK_SPEED, new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_CLUB = registerWeapon("copper_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.COPPER, 6, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_CLUB = registerWeapon("iron_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.IRON, 6, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_CLUB = registerWeapon("golden_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.GOLD, 6, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_CLUB = registerWeapon("diamond_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.DIAMOND, 6, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_CLUB = registerWeapon("netherite_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.NETHERITE, 6, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_CLUB = registerWeapon("forgotten_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.FORGOTTEN, 6, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_CLUB = registerWeapon("copper_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.COPPER, CLUB_BASE_ATTACK_DAMAGE, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_CLUB = registerWeapon("iron_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.IRON, CLUB_BASE_ATTACK_DAMAGE, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_CLUB = registerWeapon("golden_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.GOLD, CLUB_BASE_ATTACK_DAMAGE, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_CLUB = registerWeapon("diamond_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.DIAMOND, CLUB_BASE_ATTACK_DAMAGE, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_CLUB = registerWeapon("netherite_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(Tiers.NETHERITE, CLUB_BASE_ATTACK_DAMAGE, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_CLUB = registerWeapon("forgotten_club", WeaponModelType.SCALED_WEAPON_32, () -> new SwordItem(ModTiers.FORGOTTEN, CLUB_BASE_ATTACK_DAMAGE, DEFAULT_CLUB_ATTACK_SPEED, new Item.Properties()));
 
     private static final float[] CLAYMORE_TRANSLATION = new float[]{0f, 10f, 0.5f};
-    public static final RegistryObject<Item> COPPER_CLAYMORE = registerWeapon("copper_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.COPPER, 5, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_CLAYMORE = registerWeapon("iron_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.IRON, 5, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_CLAYMORE = registerWeapon("golden_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.GOLD, 5, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_CLAYMORE = registerWeapon("diamond_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.DIAMOND, 5, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_CLAYMORE = registerWeapon("netherite_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.NETHERITE, 5, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_CLAYMORE = registerWeapon("forgotten_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.FORGOTTEN, 5, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_CLAYMORE = registerWeapon("copper_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.COPPER, CLAYMORE_BASE_ATTACK_DAMAGE, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_CLAYMORE = registerWeapon("iron_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.IRON, CLAYMORE_BASE_ATTACK_DAMAGE, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_CLAYMORE = registerWeapon("golden_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.GOLD, CLAYMORE_BASE_ATTACK_DAMAGE, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_CLAYMORE = registerWeapon("diamond_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.DIAMOND, CLAYMORE_BASE_ATTACK_DAMAGE, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_CLAYMORE = registerWeapon("netherite_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.NETHERITE, CLAYMORE_BASE_ATTACK_DAMAGE, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_CLAYMORE = registerWeapon("forgotten_claymore", WeaponModelType.SCALED_WEAPON_32, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.FORGOTTEN, CLAYMORE_BASE_ATTACK_DAMAGE, DEFAULT_CLAYMORE_ATTACK_SPEED, new Item.Properties()));
 
-    public static final RegistryObject<Item> COPPER_KATANA = registerWeapon("copper_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.COPPER, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_KATANA = registerWeapon("iron_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.IRON, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_KATANA = registerWeapon("golden_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.GOLD, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_KATANA = registerWeapon("diamond_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.DIAMOND, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_KATANA = registerWeapon("netherite_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.NETHERITE, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_KATANA = registerWeapon("forgotten_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.FORGOTTEN, 5, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> COPPER_KATANA = registerWeapon("copper_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.COPPER, KATANA_BASE_ATTACK_DAMAGE, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_KATANA = registerWeapon("iron_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.IRON, KATANA_BASE_ATTACK_DAMAGE, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_KATANA = registerWeapon("golden_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.GOLD, KATANA_BASE_ATTACK_DAMAGE, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_KATANA = registerWeapon("diamond_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.DIAMOND, KATANA_BASE_ATTACK_DAMAGE, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_KATANA = registerWeapon("netherite_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(Tiers.NETHERITE, KATANA_BASE_ATTACK_DAMAGE, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_KATANA = registerWeapon("forgotten_katana", WeaponModelType.CUSTOM, CLAYMORE_TRANSLATION, () -> new SwordItem(ModTiers.FORGOTTEN, KATANA_BASE_ATTACK_DAMAGE, DEFAULT_KATANA_ATTACK_SPEED, new Item.Properties()));
 
 
     //Ranged Weapons
-    public static final RegistryObject<Item> COPPER_BOW = registerWeapon("copper_bow", WeaponModelType.BOW, () -> new TieredBowItem(3, ModTiers.COPPER, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_BOW = registerWeapon("iron_bow", WeaponModelType.BOW, () -> new TieredBowItem(4, Tiers.IRON, new Item.Properties()));
-    public static final RegistryObject<Item> GOLDEN_BOW = registerWeapon("golden_bow", WeaponModelType.BOW, () -> new TieredBowItem(3, Tiers.GOLD, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_BOW = registerWeapon("diamond_bow", WeaponModelType.BOW, () -> new TieredBowItem(4.5, Tiers.DIAMOND, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_BOW = registerWeapon("netherite_bow", WeaponModelType.BOW, () -> new TieredBowItem(5, Tiers.NETHERITE, new Item.Properties()));
-    public static final RegistryObject<Item> FORGOTTEN_BOW = registerWeapon("forgotten_bow", WeaponModelType.BOW, () -> new TieredBowItem(5.5, ModTiers.FORGOTTEN, new Item.Properties()));
+    private static final double TIERED_BOW_BASE_ARROW_DAMAGE = 3;
+    public static final RegistryObject<Item> COPPER_BOW = registerWeapon("copper_bow", WeaponModelType.BOW, () -> new TieredBowItem(TIERED_BOW_BASE_ARROW_DAMAGE, ModTiers.COPPER, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_BOW = registerWeapon("iron_bow", WeaponModelType.BOW, () -> new TieredBowItem(TIERED_BOW_BASE_ARROW_DAMAGE, Tiers.IRON, new Item.Properties()));
+    public static final RegistryObject<Item> GOLDEN_BOW = registerWeapon("golden_bow", WeaponModelType.BOW, () -> new TieredBowItem(TIERED_BOW_BASE_ARROW_DAMAGE, Tiers.GOLD, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_BOW = registerWeapon("diamond_bow", WeaponModelType.BOW, () -> new TieredBowItem(TIERED_BOW_BASE_ARROW_DAMAGE, Tiers.DIAMOND, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_BOW = registerWeapon("netherite_bow", WeaponModelType.BOW, () -> new TieredBowItem(TIERED_BOW_BASE_ARROW_DAMAGE, Tiers.NETHERITE, new Item.Properties()));
+    public static final RegistryObject<Item> FORGOTTEN_BOW = registerWeapon("forgotten_bow", WeaponModelType.BOW, () -> new TieredBowItem(TIERED_BOW_BASE_ARROW_DAMAGE, ModTiers.FORGOTTEN, new Item.Properties()));
 
     //Unique Weapons
     public static final RegistryObject<Item> BLOOD_CULT_DAGGER = registerWeapon("blood_cult_dagger", WeaponModelType.BASIC_WEAPON, false,

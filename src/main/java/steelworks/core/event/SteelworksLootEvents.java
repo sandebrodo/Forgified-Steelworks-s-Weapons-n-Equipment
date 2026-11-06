@@ -24,13 +24,14 @@ public class SteelworksLootEvents {
         ResourceLocation id = event.getName();
 
         if (id.equals(BuiltInLootTables.NETHER_BRIDGE)) {
-            event.getTable().addPool(buildPool(ModItems.FORGOTTEN_SCRAP.get(), 2, 0.01f));
+            event.getTable().addPool(buildPool(ModItems.FORGOTTEN_SCRAP.get(), 2, 0.07f));
+            event.getTable().addPool(buildPool(ModItems.FORGOTTEN_INGOT.get(), 1, 0.015f));
         }
 
         if (id.equals(BuiltInLootTables.ANCIENT_CITY)) {
-            event.getTable().addPool(buildPool(ModItems.FORGOTTEN_SCRAP.get(), 3, 0.0035F));
+            event.getTable().addPool(buildPool(ModItems.FORGOTTEN_SCRAP.get(), 3, 0.09F));
+            event.getTable().addPool(buildPool(ModItems.FORGOTTEN_INGOT.get(), 1, 0.025F));
         }
-
     }
 
     static LootPool buildPool(Item item, int maxCount, float chance) {
