@@ -5,7 +5,6 @@ import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.UseAnim;
-import org.jetbrains.annotations.NotNull;
 
 public class TieredBowItem extends BowItem {
     private final double arrowBaseDamage;
@@ -19,7 +18,8 @@ public class TieredBowItem extends BowItem {
 
     @Override
     public AbstractArrow customArrow(AbstractArrow arrow, ItemStack projectileStack, ItemStack weaponStack) {
-        arrow.setBaseDamage(this.arrowBaseDamage);
+        float tierDamageBonus = tier.getAttackDamageBonus() / 2;
+        arrow.setBaseDamage(this.arrowBaseDamage + tierDamageBonus);
         return super.customArrow(arrow, projectileStack, weaponStack);
     }
 

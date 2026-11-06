@@ -24,8 +24,7 @@ import java.util.List;
 
 public class HammerItem extends DiggerItem {
     public HammerItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, ModTags.Blocks.MINEABLE_WITH_HAMMER, properties);
-        createAttributes(tier, attackDamage, attackSpeed);
+        super(tier, ModTags.Blocks.MINEABLE_WITH_HAMMER, properties.attributes(createAttributes(tier, attackDamage, attackSpeed)));
     }
 
     public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initalBlockPos, ServerPlayer player) {

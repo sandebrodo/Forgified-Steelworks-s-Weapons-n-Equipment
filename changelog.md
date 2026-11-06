@@ -1,2 +1,4 @@
-## Port to 1.21.1 NeoForge
-### May cause bugs, please report to https://github.com/sandebrodo/Forgified-Steelworks-s-Weapons-n-Equipment/issues
+### - Code cleanup
+### - Rewrite tiered bow damage formula
+### - Increased loot chance for forgotten scrap, forgotten ingot added as loot
+### - HammerItem attributes fix
