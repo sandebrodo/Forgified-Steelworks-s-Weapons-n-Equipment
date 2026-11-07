@@ -8,6 +8,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import steelworks.SteelworksWeapons;
 import steelworks.core.registry.ModBlocks;
+import steelworks.core.registry.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,7 +19,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider p_256380_) {
+    protected void addTags(HolderLookup.Provider provider) {
+
+        this.tag(ModTags.Blocks.MINEABLE_WITH_HAMMER)
+                .addTags(
+                        BlockTags.MINEABLE_WITH_PICKAXE,
+                        BlockTags.MINEABLE_WITH_SHOVEL
+                );
+
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.FORGOTTEN_BLOCK.get(),
                         ModBlocks.MOON_ALTAR.get(),
