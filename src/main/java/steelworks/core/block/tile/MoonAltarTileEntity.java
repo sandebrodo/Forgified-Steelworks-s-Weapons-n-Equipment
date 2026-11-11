@@ -21,8 +21,8 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import steelworks.core.block.MoonAltarBlock;
 import steelworks.core.container.MoonAltarContainer;
 import steelworks.core.recipe.MoonAltarRecipe;
-import steelworks.core.registry.ModParticles;
-import steelworks.core.registry.ModTileEntities;
+import steelworks.core.init.ModParticles;
+import steelworks.core.init.ModTileEntities;
 
 import java.util.ArrayList;
 import java.util.List;

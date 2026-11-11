@@ -1,8 +1,6 @@
 package steelworks.core.client.model;
 
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib.model.DefaultedBlockGeoModel;
 import software.bernie.geckolib.model.GeoModel;
 import steelworks.SteelworksWeapons;
 import steelworks.core.block.tile.MoonAltarTileEntity;

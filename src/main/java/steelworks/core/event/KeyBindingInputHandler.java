@@ -6,7 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import steelworks.SteelworksWeapons;
 import steelworks.core.network.AbilityKeyPacket;
-import steelworks.core.registry.ModNetwork;
+import steelworks.core.network.ModNetwork;
 
 @Mod.EventBusSubscriber(modid = SteelworksWeapons.MODID, value = Dist.CLIENT)
 public class KeyBindingInputHandler {

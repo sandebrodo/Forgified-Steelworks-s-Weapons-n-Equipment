@@ -17,10 +17,11 @@ import net.minecraft.world.item.SwordItem;
 import java.util.List;
 import java.util.UUID;
 
+@Deprecated(since = "1.2.0")
+//Todo: rewrite engrave system, integrate kubeJS plugin
 public class ItemEngraveManager implements IEngraveHitEffect {
 
     private static final String ENGRAVE_TAG = "engrave_type";
-
     private static final String SWORD_ENGRAVE_TYPE = "sword";
     private static final String SCYTHE_ENGRAVE_TYPE = "scythe";
 

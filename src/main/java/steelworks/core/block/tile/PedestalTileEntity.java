@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import steelworks.core.registry.ModTileEntities;
+import steelworks.core.init.ModTileEntities;
 
 public class PedestalTileEntity extends BlockEntity {
 

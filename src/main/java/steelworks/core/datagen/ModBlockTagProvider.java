@@ -7,7 +7,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import steelworks.SteelworksWeapons;
-import steelworks.core.registry.ModBlocks;
+import steelworks.core.init.ModBlocks;
 
 import java.util.concurrent.CompletableFuture;
 

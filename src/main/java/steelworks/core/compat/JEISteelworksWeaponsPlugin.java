@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
 import steelworks.SteelworksWeapons;
 import steelworks.core.recipe.MoonAltarRecipe;
-import steelworks.core.registry.ModBlocks;
+import steelworks.core.init.ModBlocks;
 
 import java.util.List;
 

@@ -2,11 +2,10 @@ package steelworks.core.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
-import steelworks.core.registry.ModEffects;
+import steelworks.core.init.ModEffects;
 
 public class BloodCultDaggerItem extends SwordItem {
     public BloodCultDaggerItem(Tier tier, int damage, float attackSpeed, Properties properties) {

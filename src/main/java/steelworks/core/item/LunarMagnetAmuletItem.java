@@ -13,7 +13,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import steelworks.core.api.IAbilityItem;
-import steelworks.core.registry.ModParticles;
+import steelworks.core.init.ModParticles;
 import steelworks.core.util.TooltipUtil;
 import top.theillusivec4.curios.api.SlotContext;
 

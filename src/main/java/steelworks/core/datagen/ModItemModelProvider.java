@@ -12,7 +12,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import steelworks.SteelworksWeapons;
-import steelworks.core.registry.ModItems;
+import steelworks.core.init.ModItems;
 
 import java.util.*;
 

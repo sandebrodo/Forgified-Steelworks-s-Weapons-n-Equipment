@@ -4,17 +4,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import steelworks.SteelworksWeapons;
 import steelworks.core.item.WhiteMoonAmuletItem;
-import steelworks.core.registry.ModItems;
+import steelworks.core.init.ModItems;
 import steelworks.core.util.ItemFlagUtil;
 import steelworks.core.util.SteelworksCurioUtils;
 

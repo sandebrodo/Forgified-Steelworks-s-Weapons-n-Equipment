@@ -17,15 +17,12 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.client.extensions.common.IClientBlockExtensions;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.GeckoLib;
 import steelworks.core.block.tile.MoonAltarTileEntity;
-import steelworks.core.registry.ModTileEntities;
+import steelworks.core.init.ModTileEntities;
 import steelworks.core.util.TooltipUtil;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public class MoonAltarBlock extends MoonPedestalBlock {
     public static final BooleanProperty LIT = BooleanProperty.create("lit");

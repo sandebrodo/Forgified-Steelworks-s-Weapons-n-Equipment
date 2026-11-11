@@ -13,7 +13,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import steelworks.SteelworksWeapons;
 import steelworks.core.item.HammerItem;
-import steelworks.core.registry.ModItems;
+import steelworks.core.init.ModItems;
 
 import java.util.*;
 
@@ -113,5 +113,11 @@ public class SteelworksServerEvents {
         if (stack.is(ModItems.BLOOD_CULT_DAGGER.get())) {
             event.getEntity().discard();
         }
+    }
+
+    public static void onServerTick(TickEvent.ServerTickEvent event) {
+
+
+
     }
 }

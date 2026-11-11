@@ -24,7 +24,7 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
 import steelworks.SteelworksWeapons;
-import steelworks.core.registry.ModBlocks;
+import steelworks.core.init.ModBlocks;
 
 import java.util.List;
 

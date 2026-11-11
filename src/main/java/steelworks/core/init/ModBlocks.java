@@ -1,4 +1,4 @@
-package steelworks.core.registry;
+package steelworks.core.init;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

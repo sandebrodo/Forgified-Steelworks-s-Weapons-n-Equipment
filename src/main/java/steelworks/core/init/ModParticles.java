@@ -1,4 +1,4 @@
-package steelworks.core.registry;
+package steelworks.core.init;
 
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;

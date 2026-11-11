@@ -1,4 +1,4 @@
-package steelworks.core.registry;
+package steelworks.core.init;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.eventbus.api.IEventBus;

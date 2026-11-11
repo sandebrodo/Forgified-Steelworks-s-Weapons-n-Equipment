@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.Nullable;
-import steelworks.core.registry.ModTags;
+import steelworks.core.init.ModTags;
 import steelworks.core.util.TooltipUtil;
 
 import java.util.ArrayList;

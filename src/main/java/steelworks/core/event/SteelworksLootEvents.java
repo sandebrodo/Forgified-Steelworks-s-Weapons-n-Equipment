@@ -13,7 +13,7 @@ import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import steelworks.SteelworksWeapons;
-import steelworks.core.registry.ModItems;
+import steelworks.core.init.ModItems;
 
 @Mod.EventBusSubscriber(modid = SteelworksWeapons.MODID)
 public class SteelworksLootEvents {

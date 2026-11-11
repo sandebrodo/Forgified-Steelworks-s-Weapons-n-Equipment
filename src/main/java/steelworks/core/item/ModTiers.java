@@ -4,7 +4,7 @@ import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import steelworks.core.registry.ModItems;
+import steelworks.core.init.ModItems;
 
 import java.util.function.Supplier;
 

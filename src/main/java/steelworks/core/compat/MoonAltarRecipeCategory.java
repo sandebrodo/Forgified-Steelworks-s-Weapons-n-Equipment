@@ -13,12 +13,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import org.checkerframework.checker.guieffect.qual.UI;
 import steelworks.SteelworksWeapons;
 import steelworks.core.recipe.MoonAltarRecipe;
-import steelworks.core.registry.ModBlocks;
-
-import java.util.List;
+import steelworks.core.init.ModBlocks;
 
 public class MoonAltarRecipeCategory implements IRecipeCategory<MoonAltarRecipe> {
 

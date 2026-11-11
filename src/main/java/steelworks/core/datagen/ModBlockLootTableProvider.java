@@ -1,7 +1,6 @@
 package steelworks.core.datagen;
 
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -10,8 +9,8 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
-import steelworks.core.registry.ModBlocks;
-import steelworks.core.registry.ModItems;
+import steelworks.core.init.ModBlocks;
+import steelworks.core.init.ModItems;
 
 import java.util.Set;
 

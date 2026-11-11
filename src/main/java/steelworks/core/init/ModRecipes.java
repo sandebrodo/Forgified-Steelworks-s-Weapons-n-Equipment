@@ -1,4 +1,4 @@
-package steelworks.core.registry;
+package steelworks.core.init;
 
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;

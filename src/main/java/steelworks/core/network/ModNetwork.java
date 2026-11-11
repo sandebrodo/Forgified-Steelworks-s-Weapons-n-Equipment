@@ -1,10 +1,9 @@
-package steelworks.core.registry;
+package steelworks.core.network;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import steelworks.SteelworksWeapons;
-import steelworks.core.network.AbilityKeyPacket;
 
 public class ModNetwork {
     private static int packetId = 0;
@@ -17,15 +16,8 @@ public class ModNetwork {
     );
 
 
-    public static void register() {
-        CHANNEL.registerMessage(
-                packetId++,
-                AbilityKeyPacket.class,
-                AbilityKeyPacket::encode,
-                AbilityKeyPacket::new,
-                AbilityKeyPacket::handle
-        );
+    public static void init() {
+        CHANNEL.registerMessage(packetId++, AbilityKeyPacket.class, AbilityKeyPacket::encode, AbilityKeyPacket::new, AbilityKeyPacket::handle);
     }
-
 
 }

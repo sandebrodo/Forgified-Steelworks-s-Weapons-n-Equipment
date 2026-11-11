@@ -1,4 +1,4 @@
-package steelworks.core.registry;
+package steelworks.core.init;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;

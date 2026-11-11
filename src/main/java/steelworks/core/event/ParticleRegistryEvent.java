@@ -6,7 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import steelworks.SteelworksWeapons;
 import steelworks.core.particle.MoonAltarParticle;
-import steelworks.core.registry.ModParticles;
+import steelworks.core.init.ModParticles;
 
 @Mod.EventBusSubscriber(modid = SteelworksWeapons.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ParticleRegistryEvent {

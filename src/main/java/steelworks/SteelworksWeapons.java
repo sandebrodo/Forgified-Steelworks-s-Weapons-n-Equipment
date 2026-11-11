@@ -6,8 +6,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import steelworks.core.registry.*;
-import top.theillusivec4.curios.api.CuriosApi;
+import steelworks.core.init.*;
+import steelworks.core.network.ModNetwork;
 
 @Mod(SteelworksWeapons.MODID)
 @SuppressWarnings("removal")
@@ -25,7 +25,7 @@ public class SteelworksWeapons {
         ModTileEntities.register(modEventBus);
         ModRecipes.register(modEventBus);
         ModParticles.register(modEventBus);
-        ModNetwork.register();
+        ModNetwork.init();
     }
 
     public static ResourceLocation resourceLocation(String path) {
