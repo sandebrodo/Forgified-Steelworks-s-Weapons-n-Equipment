@@ -1,7 +1,7 @@
 {
   "type": "steelworks_weapons:moon_altar",
   "catalyst": {
-    "item": "minecraft:emerald"
+    "tag": "c:gems/emerald"
   },
   "ingredients": [
     { "item": "steelworks_weapons:moon_gold_ingot" },

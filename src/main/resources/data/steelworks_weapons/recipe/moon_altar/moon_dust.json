@@ -8,10 +8,10 @@
     { "item": "minecraft:glowstone_dust" },
     { "item": "minecraft:glowstone_dust" },
     { "item": "minecraft:glowstone_dust" },
-    { "item": "minecraft:quartz" },
-    { "item": "minecraft:quartz" },
-    { "item": "minecraft:quartz" },
-    { "item": "minecraft:quartz" }
+    { "tag": "c:gems/quartz" },
+    { "tag": "c:gems/quartz" },
+    { "tag": "c:gems/quartz" },
+    { "tag": "c:gems/quartz" }
   ],
   "result": {
     "id": "steelworks_weapons:moon_dust",

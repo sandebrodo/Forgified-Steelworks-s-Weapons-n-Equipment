@@ -1,0 +1,10 @@
+{
+  "type": "steelworks_weapons:moon_altar",
+  "catalyst": {
+    "item": "minecraft:clay"
+  },
+  "result": {
+    "id": "steelworks_weapons:moonstone",
+    "count": 1
+  }
+}

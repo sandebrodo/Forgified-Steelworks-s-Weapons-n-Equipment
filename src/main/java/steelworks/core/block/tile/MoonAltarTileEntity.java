@@ -97,6 +97,7 @@
             } else {
                 resetProgress();
                 this.isCrafting = false;
+                stopTriggeredAnim("main", "craft");
             }
 
         }
@@ -284,7 +285,6 @@
             controllerRegistrar.add(new AnimationController<>(this, "main", 5, state -> PlayState.STOP)
                     .triggerableAnim("craft", RawAnimation.begin().thenPlay("circle_anim")
                     ));
-
         }
 
         @Override

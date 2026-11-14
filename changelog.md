@@ -1,4 +1,4 @@
-# _Changelog:_
+# _Fixes and improvements:_
 
-### - Enchantments fixes
-### - HammerItem mineable tag fix
+### - Recipes compatibility & fixes
+### - Moon Altar animation fix

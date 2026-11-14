@@ -27,7 +27,7 @@ public record AbilityKeyPayload() implements CustomPacketPayload {
         PacketDistributor.sendToServer(new AbilityKeyPayload());
     }
 
-    public static void handle(AbilityKeyPayload payload, IPayloadContext context) {
+    public void handle(IPayloadContext context) {
         if (context.player() instanceof ServerPlayer player) {
             NeoForge.EVENT_BUS.post(new ItemAbilityEvent(player));
         }
